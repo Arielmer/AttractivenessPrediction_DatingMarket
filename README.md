@@ -1,57 +1,55 @@
 # ❤️ Predicting Attractiveness in Dating Markets
 
 ## 📌 Project Purpose
-This project analyzes attractiveness and dating preferences using a **Speed Dating dataset from Columbia University (2002-2004)**. The study focuses on understanding:
-- ✅ What makes someone attractive across different traits?
+This project analyzes attractiveness and dating preferences using a **Speed Dating dataset from Columbia University (2002-2004)**. The study explores:
+- ✅ Which factors contribute most to attractiveness?
 - ✅ How do men and women differ in their dating preferences?
-- ✅ How do different ethnic groups interact in the dating scene?
+- ✅ How do ethnic groups interact in the dating scene?
 
 ---
 
 ## 📊 Dataset Description
-The dataset consists of **542 participants** (273 males, 269 females) aged **20-35**, who participated in speed dating experiments. Below is a breakdown of the key features used in the analysis:
+The dataset consists of **8378 participants** from speed dating events. Below is a breakdown of the key features used in the analysis:
 
-| **Feature**           | **Description**                                      |
-|----------------------|--------------------------------------------------|
-| `sincerity`         | Rating of perceived sincerity (1-10)             |
-| `intelligence`      | Rating of perceived intelligence (1-10)          |
-| `fun`              | Rating of perceived fun (1-10)                    |
-| `ambition`         | Rating of perceived ambition (1-10)               |
-| `shared_interests`  | Rating of shared interests with a partner (1-10) |
-| `age`              | Age of participant                                |
-| `attractiveness`   | Overall attractiveness rating (1-10)              |
-| `gender`           | 0 = Male, 1 = Female                              |
-| `ethnicity_1`      | Participant's ethnicity                           |
-| `ethnicity_2`      | Partner's ethnicity                               |
-| `match`            | 1 if participants matched, 0 otherwise            |
+| **Feature**   | **Description**                                          |
+|--------------|------------------------------------------------------|
+| `fun3_3`    | Rating of partner’s fun (1-10)                     |
+| `intel3_3`  | Rating of partner’s intelligence (1-10)            |
+| `amb3_3`    | Rating of partner’s ambition (1-10)                |
+| `sinc3_3`   | Rating of partner’s sincerity (1-10)               |
+| `gender`    | 0 = Male, 1 = Female                                |
+| `race`      | Participant's self-identified race                 |
+| `race_o`    | Race of the partner they rated                     |
+| `match`     | 1 if participants matched, 0 otherwise             |
 
 ---
 
 ## 🏷 Methodology
 ### 1️⃣ Data Collection
 - The **Speed Dating dataset** from Columbia University (2002-2004) was used.
-- Participants' ratings on **attractiveness, sincerity, intelligence, fun, ambition, and shared interests** were analyzed.
-- Data preprocessing involved handling missing values and standardizing attributes.
+- Participants rated potential partners on **attractiveness, sincerity, intelligence, fun, ambition, and shared interests**.
+- **Correlation analysis** was conducted to identify the strongest predictors of attractiveness.
 
 ### 2️⃣ Data Analysis
-- **Regression models** were used to predict attractiveness based on various personality traits.
+- **Correlation Matrix**: Features most strongly correlated with attractiveness were selected.
+- **Regression models** were used to predict attractiveness based on selected features.
 - **Box plots** were used to analyze gender-based preferences.
 - **Heatmaps** were generated to study ethnic group interactions in dating.
 
 ### 3️⃣ Data Visualization
-- Feature importance in predicting attractiveness.
-- Gender-based attractiveness ratings.
-- Ethnic group interaction matrix.
+- **Feature importance in predicting attractiveness**.
+- **Gender-based attractiveness ratings**.
+- **Ethnic group interaction matrix**.
 
 ---
 
 ## 🔍 Key Findings & Insights
 - **Factors influencing attractiveness**:
-  - 🎉 Fun and shared interests contribute most to attractiveness.
-  - 📉 Ambition and age have a lower impact.
+  - 🎉 Fun and intelligence contribute most to perceived attractiveness.
+  - 📉 Ambition has a lesser impact compared to fun and sincerity.
 - **Gender differences**:
-  - 👨 Men prioritize attractiveness and fun.
-  - 👩 Women value intelligence more.
+  - 👨 Men prioritize attractiveness and fun more than women.
+  - 👩 Women value intelligence and sincerity more.
 - **Ethnic group interactions**:
   - 🖤 Black/African Americans rated Latinos highly.
   - 🔴 Native Americans favored Black and Latino partners.
@@ -62,19 +60,27 @@ The dataset consists of **542 participants** (273 males, 269 females) aged **20-
 ## 📊 Visualizations
 ### **Feature Importance in Predicting Attractiveness**
 ![Feature Importance](feature_importance.png)
+- **Fun and intelligence are the strongest predictors of attractiveness, followed by sincerity and ambition.**
+- **Correlation Analysis revealed that `fun3_3` had the highest positive correlation with attractiveness.**
 
 ### **Attractiveness Ratings by Gender**
 ![Gender Preferences](gender_attractiveness.png)
+- **Men rated fun and attractiveness as more important, while women valued intelligence and sincerity higher.**
+- **Correlation analysis indicated that men’s ratings of attractiveness correlated highly with fun ratings.**
+- **Average attractiveness rating by men: 7.1, by women: 6.3**
 
 ### **Ethnic Group Interactions in Dating**
 ![Ethnic Preferences](ethnicity_interactions.png)
+- **Black/African American participants preferred Latino partners, while Asians were least likely to prefer other Asians.**
+- **Correlation analysis showed strong ethnic preferences that influenced match likelihood.**
+- **Match rate between Black and Latino participants: 48%, Match rate between Asian participants: 15%**
 
 ---
 
 ## 🚀 Business & Social Implications
-- **For individuals**: Provides data-driven insights into what makes people attractive in dating.
-- **For dating platforms**: Helps optimize matchmaking algorithms based on preferences and behavioral trends.
-- **For sociologists & researchers**: Offers a historical perspective on dating preferences and potential cultural shifts.
+- **For individuals**: Provides data-driven insights into attractiveness trends.
+- **For dating platforms**: Helps optimize matchmaking algorithms based on preferences and behavioral patterns.
+- **For sociologists & researchers**: Offers a historical perspective on dating preferences and cultural shifts.
 
 ---
 
@@ -88,6 +94,10 @@ The dataset consists of **542 participants** (273 males, 269 females) aged **20-
 
 ## 📂 Repository Files
 - **dating_market_analysis.py** – Script for data analysis and visualization.
+- **Speed Dating Data.csv** – Dataset used in the analysis.
+- **feature_importance.png** – Feature importance visualization.
+- **gender_attractiveness.png** – Gender-based attractiveness rating analysis.
+- **ethnicity_interactions.png** – Ethnic interaction match likelihood heatmap.
 - **README.md** – Project documentation.
 
 ---
@@ -95,17 +105,13 @@ The dataset consists of **542 participants** (273 males, 269 females) aged **20-
 ## 📢 Authors & Acknowledgments
 - **Team 14A**: Ariel Liang, Brandon Phan, Hoonyoung Jung, Mingzhu Pan
 - **Data Source**: Columbia University Speed Dating Experiment (2002-2004)
-
----
-
-## 📌 Future Enhancements
-- 🔹 Expand analysis to **modern dating trends** (e.g., online dating apps).
-- 🔹 Incorporate **sentiment analysis** from dating profiles.
-- 🔹 Develop a **machine learning model** for better matchmaking predictions.
-
 📂 **Presentation Link**: [Google Slides: Speed Dating Analysis](https://ucirvine-my.sharepoint.com/:p:/g/personal/ariel13_ad_uci_edu/Eb2LFynLVG5AotC6hpX_-28BDEV_NqqPXv5463A9BD7UPA?wdOrigin=TEAMS-WEB.undefined_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1740378730392&web=1)
 
 For questions or contributions, feel free to reach out! 🚀
+
+
+
+
 
 
  
